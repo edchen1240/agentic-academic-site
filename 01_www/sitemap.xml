@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Regenerate with: python 07_scripts/gen_sitemap.py  (run by the deploy-sync skill) -->
+<!-- EDIT the base URL in 07_scripts/gen_sitemap.py, then regenerate. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://your-domain.example/</loc></url>
+  <url><loc>https://your-domain.example/posts/</loc></url>
+  <url><loc>https://your-domain.example/projects/</loc></url>
+  <url><loc>https://your-domain.example/materials/</loc></url>
+</urlset>

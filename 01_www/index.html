@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: your meta description (1-2 sentences, includes your name + field) -->
+  <meta name="description" content="Your Name — PhD Student in Your Field. Academic portfolio and CV.">
+  <!-- EDIT: comma-separated keywords (your name variants + field) -->
+  <meta name="keywords" content="Your Name, Your University, Your Field">
+  <!-- EDIT: page title -->
+  <title>Your Name | Your University | Your Field</title>
+
+  <!-- Fonts + icons -->
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- SEO: structured data (Person). The growth-marketer keeps this in sync with 00_profile/. -->
+  <!-- EDIT all fields below. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "alternateName": ["Preferred Name"],
+    "url": "https://your-domain.example/",
+    "jobTitle": "PhD Student in Your Field",
+    "worksFor": { "@type": "Organization", "name": "Your University" },
+    "alumniOf": [ { "@type": "Organization", "name": "Your Prior University" } ],
+    "knowsAbout": ["Topic One", "Topic Two", "Topic Three"],
+    "description": "One-sentence professional summary.",
+    "sameAs": [
+      "https://www.linkedin.com/in/your-handle/",
+      "https://scholar.google.com/citations?user=YOUR_ID"
+    ],
+    "email": "mailto:you@example.com"
+  }
+  </script>
+</head>
+
+<body>
+  <div id="main-container-lv1">
+
+    <!-- ===================== HEADER ===================== -->
+    <div id="header-container-lv2">
+      <div id="header">
+        <!-- EDIT: name + title -->
+        <a class="header_logotype_container" href="index.html">
+          <h1 class="logotype_name"><span class="purple">Your </span>Name</h1>
+          <h2 class="logotype_occupation">PhD Student in Your Field</h2>
+        </a>
+
+        <div class="header_menu_container">
+          <!-- EDIT: navigation. Remove a tab entirely rather than leaving a dead link. -->
+          <ul class="header_menu horizontal_list">
+            <li><a class="no_left_border" href="index.html">Profile</a></li>
+            <li><a href="https://scholar.google.com/citations?user=YOUR_ID">Publications</a></li>
+            <li><a href="posts/">Perspectives</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="materials/">Materials</a></li>
+          </ul>
+          <div class="clear"></div>
+
+          <div class="header_buttons">
+            <button id="light-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Change theme">
+              <i class="fa fa-moon-o"></i><i class="fa fa-sun-o"></i>
+            </button>
+            <!-- EDIT: second-language file, or delete this button to drop bilingual support -->
+            <a id="lang-toggle" href="index_zh-TW.html" role="button" aria-label="Switch language" title="Change language">
+              <i class="fa fa-language"></i>
+            </a>
+            <!-- EDIT: path to your CV PDF -->
+            <a id="download-cv" href="assets/CV.pdf" target="_blank" rel="noopener" aria-label="Download CV" title="Download CV">
+              <i class="fa fa-download"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANALYTICS: the growth-marketer wires this. Replace with your GoatCounter code, or delete. -->
+    <!-- <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
+
+    <!-- ===================== CONTENT ROW ===================== -->
+    <div id="content-row-lv2">
+
+      <!-- SIDEBAR -->
+      <div id="left-sidebar-lv3">
+          <div class="profile_frame">
+            <!-- EDIT: your photo in 01_www/assets/ -->
+            <img src="assets/profile.jpg" alt="profile picture">
+          </div>
+          <div class="hello_content">
+            <h2>Hello!</h2>
+            <!-- EDIT: 2-3 sentence intro -->
+            <p>I'm a PhD student working at the intersection of A, B, and C. I build systems that turn research ideas into working tools.</p>
+          </div>
+          <div class="contact_details_content">
+            <h2>Contact details</h2>
+            <p class="purple">Email:</p>
+            <!-- EDIT -->
+            <p>you [at] example.com</p>
+          </div>
+          <a href="mailto:you@example.com" class="send_message_button">
+            <span class="cut1"></span><span class="cut2"></span>
+            <span class="content">Send me a message <span class="fa fa-angle-double-right"></span></span>
+          </a>
+          <div class="get_social_content">
+            <h2>Get social</h2>
+            <ul class="social_icons horizontal_list">
+              <!-- EDIT links -->
+              <li><a class="linkedin" href="https://www.linkedin.com/in/your-handle/"><span class="fa fa-linkedin-square"></span><span class="invisible">LinkedIn</span></a></li>
+              <li><a class="github" href="https://github.com/your-handle"><span class="fa fa-github-square"></span><span class="invisible">GitHub</span></a></li>
+            </ul>
+          </div>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div id="main-content-lv3">
+
+        <div class="block">
+          <h2>Professional Highlights</h2>
+          <!-- EDIT: one line per domain you span -->
+          <ul class="profile_highlights">
+            <li>Domain A | degree / role / institution</li>
+            <li>Domain B | degree / role / institution</li>
+            <li>Domain C | degree / role / institution</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h2>About</h2>
+          <!-- EDIT: 2-4 short paragraphs telling your trajectory -->
+          <p>Write your research narrative here: what you work on, why it matters, and the through-line that connects your background to where you're headed.</p>
+        </div>
+
+        <div class="horizontal_line">
+          <div class="line_left"></div><div class="left_circle"></div>
+          <div class="central_circle"></div><div class="right_circle"></div><div class="line_right"></div>
+        </div>
+
+        <div class="block">
+          <h2>Education</h2>
+          <!-- EDIT: duplicate the education_item block per degree -->
+          <div class="education_item">
+            <h3>Ph.D. in Your Field</h3>
+            <p class="institution"><strong>Your University, City, Country</strong><br>Advisor: Prof. Name</p>
+            <p class="date">Sep 20XX — Present</p>
+          </div>
+          <div class="education_item">
+            <h3>B.S. in Your Field</h3>
+            <p class="institution"><strong>Prior University, City, Country</strong></p>
+            <p class="date">Sep 20XX — Jun 20XX</p>
+          </div>
+        </div>
+
+        <div class="horizontal_line">
+          <div class="line_left"></div><div class="left_circle"></div>
+          <div class="central_circle"></div><div class="right_circle"></div><div class="line_right"></div>
+        </div>
+
+        <div class="block">
+          <h2>Experience</h2>
+          <!-- EDIT: duplicate per role -->
+          <div class="education_item">
+            <h3>Role Title</h3>
+            <p class="institution"><strong>Organization</strong></p>
+            <p class="date">Mon 20XX — Mon 20XX</p>
+          </div>
+        </div>
+
+        <div class="horizontal_line">
+          <div class="line_left"></div><div class="left_circle"></div>
+          <div class="central_circle"></div><div class="right_circle"></div><div class="line_right"></div>
+        </div>
+
+        <div class="last block">
+          <h2>Interests</h2>
+          <!-- EDIT -->
+          <ul>
+            <li><strong>Interest one</strong> — a sentence on what and why.</li>
+            <li><strong>Interest two</strong> — a sentence on what and why.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <!-- ===================== FOOTER ===================== -->
+    <div id="footer-container-lv2">
+      <div id="footer">
+        <!-- EDIT -->
+        <p class="footer_name">Your Name · CV 20XX</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dark_mode.js" defer></script>
+</body>
+</html>

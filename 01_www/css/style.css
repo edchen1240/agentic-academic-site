@@ -1,0 +1,1760 @@
+/* =================================================================
+   ACADEMIC SITE STYLESHEET  (agentic-academic-site)
+   ================================================================= */
+/* Alt + Shift + F to format code in VS Code */
+
+
+/* =================================================================
+   [1] CSS VARIABLES - DARK MODE (DEFAULT)
+   ================================================================= */
+:root {
+	/* Color variables */
+	--color-text-primary: #e4e3e8;
+	--color-text-secondary: #837c9a;
+	--color-heading: #48DA9B;
+	--color-border: #403F44;
+	--color-divider: #434247;
+	--color-button-bg: #48DA9B;
+	--color-button-hover: #29C782;
+	--color-menu-border: #e4e3e8;
+	--color-download-btn-bg: #353638;
+	--color-download-btn-hover-bg: #020609;
+	--color-download-btn-text: #e4e3e8;
+	--color-download-icon: #02070a;
+	--color-social-icon: #686868;
+	--color-quote-icon: #3d3a41;
+	--color-circle: rgba(255, 255, 255, 0.12);
+	--body-background: #10121a;
+	--main-container-background: rgba(18, 20, 28, 0.82);
+	--main-container-shadow: none;
+
+	/* Layout variables - Desktop (default) */
+	--left-col-width: 260px;
+	--main-container-width: 960px;
+	--header-height: 130px;
+	--content-width: 699px;
+	--footer-height: 60px;
+
+	/* Typography variables */
+	--font-size-h1: 48px;
+	--font-size-h2: 28px;
+	--font-size-h3: 24px;
+	--font-size-h4: 18px;
+	--font-size-base: 15px;
+	--font-size-logotype: 30px;
+	--font-size-occupation: 14px;
+
+	/* Spacing variables */
+	--block-margin: 25px 30px;
+	--block-margin-bottom: 110px;
+}
+
+/* =================================================================
+   [2] CSS VARIABLES - LIGHT MODE
+   ================================================================= */
+body.light-mode {
+	/* Color overrides for light mode */
+	--color-text-primary: #2b2b30;
+	--color-text-secondary: #5a4ea3;
+	--color-heading: #0f7d6f;
+	--color-border: #d4d6de;
+	--color-divider: #c4c7d0;
+	--color-button-bg: #0f7d6f;
+	--color-button-hover: #0b5f52;
+	--color-menu-border: #a3a9b8;
+	--color-download-btn-bg: #ffffff;
+	--color-download-btn-hover-bg: #e2e6f3;
+	--color-download-btn-text: #2b2b30;
+	--color-download-icon: #0f7d6f;
+	--color-social-icon: #2b2b30;
+	--color-quote-icon: #d0d4dd;
+	--color-circle: rgba(0, 0, 0, 0.12);
+	--body-background: #f5f7fb;
+	--main-container-background: #ffffff;
+	--main-container-shadow: 0 18px 40px rgba(15, 18, 30, 0.12);
+}
+
+/* Light mode specific adjustments */
+body.light-mode .download_print_buttons a {
+	border: 1px solid var(--color-border);
+}
+
+body.light-mode .horizontal_line .line_left,
+body.light-mode .horizontal_line .line_right {
+	opacity: 0.65;
+}
+
+
+/* =================================================================
+   [3] UTILITY CLASSES
+   ================================================================= */
+
+/* Clear floats utility */
+.clear {
+	clear: both;
+}
+
+/* Purple text color utility */
+.purple {
+	color: var(--color-text-secondary);
+}
+
+/* Content block spacing */
+.block {
+	margin: 25px 30px;
+}
+
+.block h1 {
+	margin-left: -5px;
+	font-weight: 200;
+}
+
+.last.block {
+	margin-bottom: var(--block-margin-bottom);
+}
+
+/* Horizontal list styles */
+.horizontal_list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.horizontal_list li {
+	float: left;
+}
+
+.horizontal_list li:before {
+	content: none;
+}
+
+.horizontal_list li {
+	padding-left: 0;
+	text-indent: 0;
+}
+
+/* Decorative horizontal divider line */
+.horizontal_line {
+	margin: 24px 0 -16px 30px;
+	height: 20px;
+	position: relative;
+}
+
+.line_left,
+.line_right {
+	border-top: 1px solid var(--color-divider);
+	width: 305px;
+	margin-top: 13px;
+}
+
+.line_left {
+	float: left;
+}
+
+.line_right {
+	float: right;
+}
+
+.left_circle,
+.central_circle,
+.right_circle {
+	background: rgb(69, 68, 73);
+	background: var(--color-circle);
+	position: absolute;
+	border-radius: 50px;
+}
+
+.left_circle,
+.right_circle {
+	width: 13px;
+	height: 13px;
+	top: 7px;
+}
+
+.left_circle {
+	left: 314px;
+}
+
+.central_circle {
+	width: 26px;
+	height: 26px;
+	top: 0px;
+	left: 322px;
+}
+
+.right_circle {
+	left: 343px;
+}
+
+
+/* =================================================================
+   [4] BASE STYLES - TYPOGRAPHY & LAYOUT
+   ================================================================= */
+
+/* Body styles */
+body {
+	background: var(--body-background);
+	margin: 0;
+}
+
+/* Heading styles */
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Lato', Helvetica, sans-serif;
+	font-weight: 300;
+	color: var(--color-heading);
+}
+
+h1 {
+	font-size: var(--font-size-h1);
+	font-weight: 300;
+	margin: 20px 0;
+}
+
+h2 {
+	font-size: var(--font-size-h2);
+	margin: 0;
+}
+
+h3 {
+	font-size: var(--font-size-h3);
+	margin-top: 12px;
+	margin-bottom: 6px;
+}
+
+h4 {
+	font-size: var(--font-size-h4);
+	font-weight: 400;
+}
+
+/* Blockquote styles */
+blockquote {
+	font-style: italic;
+	margin: 25px 0;
+	padding-left: 20px;
+	border-left: 2px solid var(--color-heading);
+}
+
+/* Base text styles */
+blockquote,
+ p,
+ a,
+ li {
+ 	font-family: 'Lato', Helvetica, sans-serif;
+ 	font-weight: 300;
+ 	font-size: 16px;
+ 	color: var(--color-text-primary);
+ }
+ 
+ /* Paragraph spacing: reduce top margin and add bottom spacing */
+ p {
+     margin-top: 6px;
+     margin-bottom: 18px;
+     text-align: justify;
+ }
+
+/* Link focus state */
+a:focus {
+	outline: none;
+}
+
+/* Inline hyperlinks in body text */
+p a,
+li a,
+blockquote a {
+	color: var(--color-heading);
+}
+
+p a:hover,
+li a:hover,
+blockquote a:hover {
+	color: var(--color-button-hover);
+}
+
+/* List styles */
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	padding-left: 1.5em;
+	text-indent: -1.5em;
+	text-align: justify;
+}
+
+li:before {
+	content: "• ";
+	color: var(--color-text-secondary);
+	font-size: 20px;
+	padding-right: 8px;
+}
+
+
+/* =================================================================
+   [5] LAYOUT - MAIN CONTAINERS (DESKTOP DEFAULT)
+   ================================================================= */
+
+/* Main wrapper container */
+#main-container-lv1 {
+	width: var(--main-container-width);
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	background: var(--main-container-background);
+	box-shadow: var(--main-container-shadow);
+	display: flex;
+	flex-direction: column;
+}
+
+/* Header container */
+#header-container-lv2 {
+	width: 100%;
+	height: var(--header-height);
+	border-bottom: 1px solid var(--color-border);
+	position: relative;
+	flex-shrink: 0;
+}
+
+/* Content row - wrapper for sidebar and content side by side */
+#content-row-lv2 {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	width: 100%;
+}
+
+/* Sidebar container */
+#left-sidebar-lv3 {
+	width: var(--left-col-width);
+	flex-shrink: 0;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+/* Main content column */
+#main-content-lv3 {
+	flex: 1;
+	min-width: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	border-left: 1px solid var(--color-border);
+	box-sizing: border-box;
+}
+
+/* Header left section - Logo/Name */
+.header_logotype_container {
+	text-align: center;
+	width: var(--left-col-width);
+	height: 130px;
+	border-right: 1px solid var(--color-border);
+	float: left;
+	text-decoration: none;
+}
+
+/* Header right section - Menu/Navigation */
+.header_menu_container {
+	height: 130px;
+	width: 699px;
+	float: left;
+}
+
+.header_menu_container a {
+	font-family: 'Lato', Helvetica, sans-serif;
+}
+
+
+/* Footer container */
+#footer-container-lv2 {
+	width: 100%;
+	height: 60px;
+	border-top: 1px solid var(--color-border);
+	flex-shrink: 0;
+}
+
+
+/* =================================================================
+   [6] HEADER COMPONENTS
+   ================================================================= */
+
+/* Logo/Name styling */
+.logotype_name {
+	font-size: var(--font-size-logotype);
+	margin: 43px 0 0;
+}
+
+/* Occupation/Title styling */
+.logotype_occupation {
+	margin-top: 5px;
+	color: #5ce2af;
+	font-size: var(--font-size-occupation);
+	letter-spacing: 2px;
+	padding-left: 7px;
+}
+
+/* Main navigation menu */
+.header_menu {
+	width: auto;
+	margin: 0;
+	position: absolute;
+	bottom: 15px;
+	left: 275px;
+}
+
+.header_menu a {
+	text-decoration: none;
+	padding: 0 12px;
+	border-left: 1px solid var(--color-menu-border);
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.header_menu a.no_left_border {
+	border-left: none;
+}
+
+.header_menu a:hover {
+	color: var(--color-text-secondary);
+}
+
+
+/* =================================================================
+   [7] HEADER ACTION BUTTONS
+   ================================================================= */
+
+/* Container for header buttons */
+.header_buttons {
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+/* Common button styles */
+#light-toggle,
+#lang-toggle,
+#download-cv {
+	padding: 0;
+	border: 0;
+	background-color: inherit;
+	color: var(--color-heading);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+#light-toggle:hover,
+#lang-toggle:hover,
+#download-cv:hover {
+	color: var(--color-button-hover);
+}
+
+#light-toggle i,
+#lang-toggle i,
+#download-cv i {
+	padding: 5px;
+	font-size: 18px;
+}
+
+/* Theme toggle icon switching */
+#light-toggle .fa-sun-o {
+	display: none;
+}
+
+body.light-mode #light-toggle .fa-sun-o {
+	display: inline-block;
+}
+
+body.light-mode #light-toggle .fa-moon-o {
+	display: none;
+}
+
+
+/* =================================================================
+   [8] LEFT SIDEBAR COMPONENTS
+   ================================================================= */
+
+/* Left navigation heading */
+#left_nav h2 {
+	margin: 0;
+	font-size: var(--font-size-h3);
+}
+
+/* Profile picture frame */
+.profile_frame {
+	margin-top: 50px;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profile_frame img {
+	width: 100%;
+	max-width: 500px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Hello and Contact sections */
+.hello_content,
+.contact_details_content {
+	margin-top: 25px;
+}
+
+.hello_content {
+	width: 230px;
+}
+
+.contact_details_content h2+p.purple {
+	margin-top: 10px;
+}
+
+.contact_details_content p {
+	margin: 0;
+}
+
+.contact_details_content p.purple {
+	margin-top: 25px;
+}
+
+/* Send message button with decorative cuts */
+.send_message_button,
+.special_button {
+	margin-top: 25px;
+	display: block;
+	background: var(--color-button-bg);
+	width: 230px;
+	height: 50px;
+	position: relative;
+	z-index: 1;
+}
+
+.cut1:after {
+	content: "";
+	position: absolute;
+	bottom: -19px;
+	left: -20px;
+	width: 30px;
+	height: 30px;
+	z-index: 9;
+	background: var(--body-background);
+	transform: rotate(45deg);
+}
+
+.cut2:before {
+	content: "";
+	position: absolute;
+	top: -19px;
+	right: -20px;
+	width: 30px;
+	height: 30px;
+	z-index: 9;
+	background: var(--body-background);
+	transform: rotate(45deg);
+}
+
+.content {
+	text-align: center;
+	color: #04080b;
+	width: 100%;
+	height: 40px;
+	position: absolute;
+	z-index: 2;
+	font: 18px 'Lato', Arial, sans-serif;
+	margin: 0;
+	padding: 16px 0 0;
+	top: -4px;
+	bottom: 10px;
+	border-top: 1px solid var(--color-border);
+	border-bottom: 1px solid var(--color-border);
+}
+
+.send_message_button:hover,
+.special_button:hover {
+	background: var(--color-button-hover);
+}
+
+/* Social media section */
+.get_social_content {
+	margin-top: 15px;
+}
+
+.get_social_content h2 {
+	margin-bottom: 8px;
+}
+
+.social_icons {
+	margin-left: -8px;
+	margin-bottom: 50px;
+}
+
+.social_icons a {
+	font-size: 35px;
+	text-decoration: none;
+	color: var(--color-social-icon);
+	padding: 0;
+	padding: 0 5px;
+}
+
+.social_icons a span.invisible {
+	display: none;
+}
+
+.social_icons .facebook:hover {
+	background: #3b5998;
+	color: #dfe3ee;
+	border-top-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+}
+
+.social_icons .twitter:hover {
+	background: #00B0ED;
+	color: #fff;
+	border-top-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
+
+.social_icons .linkedin:hover {
+	background: #007bb6;
+	color: #fff;
+	border-top-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+}
+
+
+/* =================================================================
+   [9] FOOTER
+   ================================================================= */
+
+.footer_name {
+	font-style: italic;
+	margin-top: 20px;
+	text-align: center;
+}
+
+
+/* =================================================================
+   [10] MAIN CONTENT - PROFILE SECTION
+   ================================================================= */
+
+/* Profile quote block */
+.profile_quote {
+	position: relative;
+	/* margin-left: 5px; */
+}
+
+.profile_quote p {
+	font-size: 17px;
+	width: 455px;
+}
+
+.profile_quote .fa-quote-left {
+	color: var(--color-quote-icon);
+	font-size: 80px;
+	font-style: normal;
+	position: absolute;
+	top: -20px;
+	right: 70px;
+	cursor: default;
+}
+
+/* Philosophy section content */
+.philosophy_content {
+	margin-top: 20px;
+}
+
+.philosophy_content p {
+	margin: 0;
+	width: 370px;
+	float: left;
+}
+
+.philosophy_content ul {
+	float: left;
+	padding-left: 40px;
+}
+
+/* Education section */
+.education_item {
+	margin-bottom: 30px;
+}
+
+.education_item::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.education_item h3 {
+	margin-bottom: 0px;
+}
+
+.education_item .institution {
+	float: left;
+	margin: 0;
+	width: 70%;
+}
+
+.education_item .date {
+	float: right;
+	margin: 0;
+	text-align: right;
+	width: 28%;
+}
+
+.education_item ul {
+	clear: both;
+	margin-top: 10px;
+}
+
+.education_item li {
+	padding-left: 20px;
+	text-indent: -25px;
+}
+
+.education_item li:before {
+	padding-right: 10px;
+}
+
+
+/* =================================================================
+   [11] RESPONSIVE DESIGN - MEDIA QUERIES
+   ================================================================= */
+
+
+
+/* -------------------------
+   DESKTOP LAYOUT (990px and above)
+   ------------------------- */
+@media (min-width: 990px) {
+
+	/* Desktop layout maintains default styles */
+	/* Full width desktop with centered container */
+	#main-container-lv1 {
+		padding: 0;
+	}
+
+	/* Desktop post item layout - cover on left 1/3, content on right 2/3 */
+	.post-item {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 20px;
+		align-items: start;
+	}
+
+	.post-cover {
+		grid-column: 1;
+		min-width: 200px;
+	}
+
+	.post-body {
+		grid-column: 2;
+	}
+
+	.post-item.no-cover {
+		grid-template-columns: 1fr;
+	}
+
+	.post-item.no-cover .post-body {
+		grid-column: 1 / -1;
+	}
+}
+
+
+
+
+/* -------------------------
+   TABLET LAYOUT (600px - 989px)
+   ------------------------- */
+@media (min-width: 600px) and (max-width: 989px) {
+	:root {
+		/* Adjust layout variables for tablet */
+		--main-container-width: 100%;
+		/* --left-col-width: 100%; */
+		/* --content-width: 100%; */
+		--header-height: auto;
+		--font-size-h1: 40px;
+		--font-size-h2: 24px;
+		--font-size-logotype: 26px;
+		--block-margin: 20px 20px;
+		--block-margin-bottom: 60px;
+	}
+
+	/* Stack layout vertically */
+	#main-container-lv1 {
+		width: 100%;
+		padding: 0 15px;
+		box-sizing: border-box;
+	}
+
+	/* Header adjustments */
+	#header {
+		height: auto;
+		min-height: 100px;
+	}
+
+	.header_logotype_container {
+		width: 100%;
+		height: auto;
+		border-right: none;
+		padding: 10px;
+		box-sizing: border-box;
+		text-align: center;
+	}
+
+
+	.header_menu_container {
+		width: 100%;
+		height: auto;
+		padding: 10px 10px;
+		box-sizing: border-box;
+	}
+
+	.logotype_name {
+		margin: 10px 0;
+	}
+
+	/* Navigation menu adjustments */
+	.download_print_buttons {
+		float: none;
+		margin: 0 auto 10px;
+	}
+
+
+	#header {
+		border-bottom: 0px solid var(--color-border);
+		/* 2nd line. Separate header title from header menu. */
+		/* 2026-0122: Remove this to keep clean. */
+	}
+
+	/* Header menu - centered on second line */
+	/* .header_menu targets the <ul> element with class="header_menu horizontal_list" in the navigation menu */
+	.header_menu {
+		position: static;
+		margin: -10px 0 10px 0;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.header_menu li {
+		float: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	/* .header_menu a targets the <a> links inside the header menu */
+	.header_menu a {
+		padding: 0px 10px;
+		/*Keep the vertical padding 0 to avoid increasing vertical bar height*/
+		font-size: 14px;
+		display: inline-block;
+		text-align: center;
+	}
+
+	/* Header buttons - centered on first line */
+	.header_buttons {
+		position: static;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		padding: 0px 10px 10px 10px;
+		/*border-bottom: 1px solid var(--color-border); */
+		/* 1st line. Separate header buttons from header menu. 
+		2026-0103-1010: We don't need the above otherwise there will be two lines.*/
+	}
+
+
+
+	/* Stack left column and content */
+	/* 
+	#content-row-lv2 {
+		flex-direction: column;
+	}
+	*/
+
+	#left-sidebar-lv3 {
+		/* width: 100%; */
+		float: none;
+		padding: 20px 15px;
+		/* border-bottom: 1px solid var(--color-border); */
+		/* Separate with the next section */
+	}
+
+	#main-content-lv3 {
+		/* width: 100%; */
+		float: none;
+		/* border-left: none; */
+	}
+
+	/* Adjust content widths */
+	.hello_content {
+		width: 100%;
+	}
+
+	.send_message_button,
+	.special_button {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	.profile_quote p {
+		width: 100%;
+	}
+
+	.philosophy_content p {
+		width: 100%;
+		float: none;
+	}
+
+	.philosophy_content ul {
+		float: none;
+		padding-left: 20px;
+		margin-top: 15px;
+	}
+
+	/* Horizontal line adjustments */
+	.line_left,
+	.line_right {
+		width: 40%;
+	}
+
+	.left_circle {
+		left: calc(40% + 5px);
+	}
+
+	.central_circle {
+		left: calc(50% - 13px);
+	}
+
+	.right_circle {
+		right: calc(40% + 5px);
+		left: auto;
+	}
+
+	/* Footer adjustments */
+	#footer-container-lv2 {
+		width: 100%;
+	}
+}
+
+
+
+/* -------------------------
+   MOBILE LAYOUT (below 600px)
+   ------------------------- */
+@media (max-width: 599px) {
+	:root {
+		/* Adjust layout variables for mobile */
+		--main-container-width: 100%;
+		--left-col-width: 100%;
+		--content-width: 100%;
+		--header-height: auto;
+		--font-size-h1: 32px;
+		--font-size-h2: 22px;
+		--font-size-h3: 20px;
+		--font-size-h4: 16px;
+		--font-size-base: 14px;
+		--font-size-logotype: 24px;
+		--font-size-occupation: 12px;
+		--block-margin: 15px 15px;
+		--block-margin-bottom: 40px;
+	}
+
+	/* Full width mobile layout */
+	#main-container-lv1 {
+		width: 100%;
+		padding: 0;
+		overflow-x: hidden;
+	}
+
+	/* Header mobile layout */
+	#header {
+		height: auto;
+		min-height: 80px;
+		border-bottom: 0px solid var(--color-border);
+		/* Separate header title from header menu. */
+		/* 2026-0122: Remove this to keep clean. */
+	}
+
+
+	.header_logotype_container {
+		width: 100%;
+		height: auto;
+		border-right: none;
+		padding: 10px;
+		box-sizing: border-box;
+		text-align: center;
+	}
+
+	.header_menu_container {
+		width: 100%;
+		height: auto;
+		padding: 10px 10px;
+		box-sizing: border-box;
+	}
+
+	.logotype_name {
+		margin: 5px 0;
+	}
+
+	.logotype_occupation {
+		letter-spacing: 1px;
+	}
+
+	/* Mobile navigation */
+	.download_print_buttons {
+		width: 100%;
+		height: auto;
+		float: none;
+		margin-bottom: 10px;
+	}
+
+	.download_print_buttons li {
+		float: none;
+		display: block;
+		margin: 5px 0;
+	}
+
+	.download_print_buttons a {
+		display: block;
+		text-align: center;
+		padding: 12px;
+		line-height: normal;
+	}
+
+	/* Header menu - centered on second line */
+	/* .header_menu targets the <ul> element with class="header_menu horizontal_list" in the navigation menu */
+	.header_menu {
+		position: static;
+		width: 100%;
+		margin: -10px 0 10px 0;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		left: auto;
+	}
+
+	.header_menu li {
+		float: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	/* .header_menu a targets the <a> links inside the header menu */
+	.header_menu a {
+		padding: 0px 8px;
+		/*Keep the vertical padding 0 to avoid increasing vertical bar height*/
+		font-size: 13px;
+		display: inline-block;
+		text-align: center;
+	}
+
+	/* Header buttons - centered on first line */
+	.header_buttons {
+		position: static;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		padding: 0px 10px 10px 10px;
+	}
+
+	.header_menu li:last-child a {
+		border-right: none;
+	}
+
+	#light-toggle i,
+	#lang-toggle i,
+	#download-cv i {
+		font-size: 16px;
+	}
+
+	/* Stack all sections vertically */
+	#content-row-lv2 {
+		flex-direction: column;
+	}
+
+
+	/* This is the line separating left-sidebar-lv3 and main-content-lv3. */
+	#left-sidebar-lv3 {
+		width: 100%;
+		float: none;
+		padding: 20px 15px;
+		box-sizing: border-box;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	#main-content-lv3 {
+		width: 100%;
+		float: none;
+		border-left: none;
+	}
+
+	/* Mobile content adjustments */
+	.block {
+		margin: var(--block-margin);
+	}
+
+	.hello_content {
+		width: 100%;
+	}
+
+	.send_message_button,
+	.special_button {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.profile_quote p {
+		width: 100%;
+		font-size: 15px;
+	}
+
+	.profile_quote .fa-quote-left {
+		font-size: 60px;
+		right: 20px;
+	}
+
+	.philosophy_content p {
+		width: 100%;
+		float: none;
+		margin-bottom: 15px;
+	}
+
+	.philosophy_content ul {
+		float: none;
+		padding-left: 15px;
+	}
+
+	/* Mobile horizontal line */
+	.horizontal_line {
+		margin: 12px 0 0 15px;
+	}
+
+	.line_left,
+	.line_right {
+		width: 35%;
+	}
+
+	.left_circle {
+		left: calc(35% + 5px);
+	}
+
+	.central_circle {
+		left: calc(50% - 13px);
+	}
+
+	.right_circle {
+		right: calc(35% + 5px);
+		left: auto;
+	}
+
+	/* Footer mobile */
+	#footer-container-lv2 {
+		width: 100%;
+		height: auto;
+		padding: 15px 0;
+	}
+
+	.footer_name {
+		margin-top: 0;
+		font-size: 13px;
+	}
+}
+
+
+/* =================================================================
+   [14] MISC PAGE STYLES
+   ================================================================= */
+
+/* Category container */
+.misc-category {
+	margin-top: 20px;
+}
+
+/* Individual item container */
+.misc-item {
+	padding: 20px 0;
+	border-bottom: 1px solid var(--color-divider);
+	margin-bottom: 20px;
+}
+
+.misc-item:last-child {
+	border-bottom: none;
+}
+
+/* Item header with title and date */
+.misc-item-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-bottom: 10px;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.misc-item-title {
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--color-heading);
+	margin: 0;
+}
+
+.misc-item-date {
+	font-size: 13px;
+	color: var(--color-text-secondary);
+	font-style: italic;
+}
+
+/* Item description */
+.misc-item-description {
+	margin: 10px 0 15px 0;
+	line-height: 1.6;
+	color: var(--color-text-primary);
+}
+
+/* Item actions/links */
+.misc-item-actions {
+	margin-top: 10px;
+}
+
+.misc-link {
+	display: inline-block;
+	padding: 8px 16px;
+	background-color: var(--color-button-bg);
+	color: var(--body-background);
+	text-decoration: none;
+	border-radius: 4px;
+	font-size: 14px;
+	transition: background-color 0.3s ease;
+}
+
+.misc-link:hover {
+	background-color: var(--color-button-hover);
+}
+
+.misc-link i {
+	margin-right: 6px;
+}
+
+/* Plain inline course week list links (no button) */
+.course-week-list {
+	margin: 8px 0 0 0;
+	padding-left: 18px;
+	color: var(--color-text-primary);
+}
+
+.course-week-list li {
+	margin: 6px 0;
+}
+
+.course-link {
+	color: var(--color-heading);
+	text-decoration: none;
+	border-bottom: 1px dashed transparent;
+	transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.course-link:hover {
+	color: var(--color-button-hover);
+	border-bottom-color: var(--color-button-hover);
+	text-decoration: none;
+}
+
+/* Category headers with icons */
+.block h2 i.fa {
+	margin-right: 10px;
+	color: var(--color-text-secondary);
+}
+
+/* Mobile responsiveness for misc page */
+@media (max-width: 767px) {
+	.misc-item-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+	}
+
+	.misc-item-title {
+		font-size: 18px;
+	}
+}
+
+
+/* =================================================================
+   [15] TOC SIDEBAR STYLES
+   ================================================================= */
+
+#toc-sidebar {
+	width: var(--left-col-width);
+	flex-shrink: 0;
+	padding: 20px 15px;
+	box-sizing: border-box;
+}
+
+#toc-sidebar nav {
+	position: sticky;
+	top: 20px;
+}
+
+#toc-sidebar .toc-title {
+	font-family: 'Lato', Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	color: var(--color-heading);
+	margin: 20px 0 12px 0;
+	padding-bottom: 8px;
+	border-bottom: 1px solid var(--color-divider);
+}
+
+#toc-sidebar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#toc-sidebar li {
+	padding-left: 0;
+	text-indent: 0;
+	margin: 0;
+}
+
+#toc-sidebar li:before {
+	content: none;
+}
+
+#toc-sidebar a {
+	display: block;
+	padding: 6px 10px;
+	font-family: 'Lato', Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 13px;
+	color: var(--color-text-secondary);
+	text-decoration: none;
+	border-left: 2px solid transparent;
+	transition: color 0.2s ease, border-color 0.2s ease;
+	line-height: 1.4;
+}
+
+#toc-sidebar a:hover {
+	color: var(--color-heading);
+}
+
+#toc-sidebar a.toc-active {
+	color: var(--color-heading);
+	border-left-color: var(--color-heading);
+	font-weight: 400;
+}
+
+/* Mobile: move TOC above content */
+@media (max-width: 599px) {
+	#toc-sidebar {
+		width: 100%;
+		padding: 15px 10px;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	#toc-sidebar nav {
+		position: static;
+	}
+
+	#toc-sidebar a {
+		font-size: 13px;
+		padding: 4px 10px;
+	}
+}
+
+
+/* =================================================================
+   [16] POST ITEM STYLES (for Perspectives page)
+   ================================================================= */
+
+/* Post item container */
+.post-item {
+	padding: 25px 0;
+	border-bottom: 1px solid var(--color-divider);
+	margin-bottom: 20px;
+	scroll-margin-top: 140px;
+}
+
+.post-item:last-child {
+	border-bottom: none;
+}
+
+/* Cover image section */
+.post-cover {
+	margin-bottom: 20px;
+	overflow: hidden;
+	border-radius: 4px;
+	max-height: 400px;
+}
+
+.post-cover-image {
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+}
+
+/* Post header with title and date */
+.post-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-bottom: 0;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+/* Post body wrapper for right column content */
+.post-body {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.post-title {
+	font-size: 24px;
+	font-weight: 400;
+	color: var(--color-heading);
+	margin: 0;
+	flex: 1;
+	min-width: 250px;
+}
+
+.post-title a {
+	color: inherit;
+	text-decoration: none;
+	font-weight: inherit;
+	font-size: 24px;
+}
+
+.post-title a:hover {
+	color: var(--color-button-hover);
+}
+
+.post-date {
+	font-size: 13px;
+	color: var(--color-text-secondary);
+	font-style: italic;
+	white-space: nowrap;
+	margin-bottom: 8px;
+}
+
+/* Post excerpt/description */
+.post-excerpt {
+	margin: 0 0 15px 0;
+	line-height: 1.6;
+	color: var(--color-text-primary);
+	font-size: 15px;
+	text-align: justify;
+}
+
+/* Post actions/links */
+.post-actions {
+	margin-top: 0px;
+}
+
+/* Mobile responsiveness for posts */
+@media (max-width: 767px) {
+	.post-item {
+		padding: 20px 0;
+	}
+
+	.post-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+	}
+
+	.post-title {
+		font-size: 20px;
+		min-width: auto;
+	}
+
+	.post-cover {
+		max-height: 300px;
+	}
+}
+
+/* Post bottom spacing */
+.post-item:last-child {
+    margin-bottom: 150px;  /* ~5.5cm in typical display (at 96dpi) */
+}
+
+/* Or for individual post pages */
+#section-closing {
+    margin-bottom: 20px;
+}
+
+
+
+
+/* =================================================================
+   [12] POST/ARTICLE STYLES - COVER IMAGE AND CONTENT FIGURES
+   ================================================================= */
+
+/* Cover section on individual post pages - full width */
+#section-cover {
+	margin-left:  30px !important;
+	margin-right: 30px !important;
+	margin-top: 0 !important;
+	padding: 0 !important;
+	width: auto;
+}
+
+#section-cover figure {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#section-cover img {
+	width: 100%;
+	height: auto;
+	display: block;
+	max-width: 100%;
+}
+
+#section-cover figcaption {
+	margin: 15px 30px 0 30px;
+	font-size: 13px;
+	color: var(--color-text-secondary);
+	font-style: italic;
+	text-align: center;
+}
+
+/* Content inline figures */
+figure {
+	margin: 2em 0;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+}
+
+figure img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+figcaption {
+	margin-top: 10px;
+	font-size: 13px;
+	color: var(--color-text-secondary);
+	font-style: italic;
+	text-align: center;
+}
+
+/* Excerpt/snippet styling */
+.excerpt {
+	font-size: 16px;
+	font-style: italic;
+	line-height: 1.6;
+	color: var(--color-text-primary);
+	border-left: 3px solid var(--color-heading);
+	padding: 15px 0 15px 15px;
+	margin: 20px 0;
+}
+
+
+/* =================================================================
+   [13] TABLE STYLES - GENERAL TABLES
+   ================================================================= */
+
+/* General table styling */
+.general-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+	background: var(--main-container-background);
+	border: 1px solid var(--color-border);
+}
+
+/* Table headers - all columns and row headers */
+.general-table th {
+	background: var(--color-border);
+	color: var(--color-heading);
+	padding: 12px 15px;
+	text-align: left;
+	font-weight: 500;
+	border: 1px solid var(--color-border);
+	font-size: 15px;
+	text-align: center;
+}
+
+/* Table cells */
+.general-table td {
+	color: var(--color-text-primary);
+	padding: 15px;
+	border: 1px solid var(--color-border);
+	font-size: 15px;
+	vertical-align: top;
+	
+}
+
+/* First column styling */
+.general-table td:first-child {
+	font-weight: 500;
+	color: var(--color-heading);
+	width: 15%;
+}
+
+/* Table lists inside cells */
+.general-table ul {
+	margin: 0;
+	padding-left: 20px;
+}
+
+.general-table li {
+	margin: 8px 0;
+	padding-left: 0;
+	text-indent: 0;
+}
+
+.general-table li:before {
+	content: none;
+}
+
+
+/* =================================================================
+   [17] BIBLIOGRAPHY / REFERENCES STYLES
+   ================================================================= */
+
+/* References container */
+#refs {
+	background-color: #2a2a2f;
+	padding: 20px;
+	border-radius: 4px;
+	margin: 20px 0;
+	border-left: 3px solid var(--color-heading);
+}
+
+/* Light mode overrides for references */
+body.light-mode #refs {
+	background-color: #f0f0f5;
+	border-left: 3px solid var(--color-heading);
+}
+
+/* Bibliography body container */
+.csl-bib-body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Individual reference entry */
+.csl-entry {
+	margin: 0 0 15px 0;
+	padding: 0;
+	line-height: 1.6;
+	font-size: 14px;
+	color: var(--color-text-primary);
+}
+
+.csl-entry:last-child {
+	margin-bottom: 0;
+}
+
+/* Reference ID anchor */
+#refs [id^="ref-"] {
+	scroll-margin-top: 140px;  /* Account for sticky header */
+}
+
+/* Links in references */
+#refs a {
+	color: var(--color-heading);
+	text-decoration: none;
+	word-break: break-all;
+	border-bottom: 1px dotted var(--color-heading);
+	transition: all 0.2s ease;
+}
+
+#refs a:hover {
+	color: var(--color-button-hover);
+	border-bottom-color: var(--color-button-hover);
+}
+
+/* Post section divider — placed before Appendix or References blocks */
+.post-section-divider {
+	margin: 30px 30px 10px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.post-section-divider .line_left,
+.post-section-divider .line_right {
+	flex: 1;
+	width: auto;
+	height: 1px;
+	background: var(--color-divider);
+	border-top: none;
+	margin-top: 0;
+}
+
+.post-section-divider .line_left  { margin-right: 12px; }
+.post-section-divider .line_right { margin-left:  12px; }
+
+.post-section-divider .left_circle,
+.post-section-divider .central_circle,
+.post-section-divider .right_circle {
+	position: static;
+	border-radius: 50%;
+	background: var(--color-heading);
+	top: auto;
+	left: auto;
+}
+
+.post-section-divider .left_circle,
+.post-section-divider .right_circle {
+	width:  12px;
+	height: 12px;
+	margin: 0 4px;
+}
+
+.post-section-divider .central_circle {
+	width:  20px;
+	height: 20px;
+	margin: 0 4px;
+}
+
+/* Appendix company entry and section heading scroll offset */
+li[id^="company-"],
+h3[id] {
+	scroll-margin-top: 140px;
+}
+
+/* Citation links (from cite-linking.lua) */
+a[href^="#ref-"] {
+	color: var(--color-heading);
+	text-decoration: none;
+	border-bottom: 1px dotted var(--color-heading);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+a[href^="#ref-"]:hover {
+	color: var(--color-button-hover);
+	border-bottom-color: var(--color-button-hover);
+	background-color: rgba(72, 218, 155, 0.1);
+	padding: 0 2px;
+}
+
+body.light-mode a[href^="#ref-"]:hover {
+	background-color: rgba(15, 125, 111, 0.1);
+}

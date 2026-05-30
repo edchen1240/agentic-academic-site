@@ -1,0 +1,33 @@
+# Local development scripts
+# [G]_*.bat # Let the user use them. It's okay to leak my local directory structure.
+# [V]_*.bat
+
+# project-sync session logs (optional, in-repo)
+09_docs/project-sync-log/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+.next/
+out/

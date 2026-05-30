@@ -1,0 +1,6 @@
+# Normalize line endings; keep them consistent across OSes.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.pdf binary
