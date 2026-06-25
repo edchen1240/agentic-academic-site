@@ -5,7 +5,7 @@ REM ==================================================
 REM SETTINGS
 REM ==================================================
 set "WORKDIR=D:\01_Floor\a_Ed\09_EECS\20_Website\11_agentic-academic-site (local private)"
-set "TARGET_DIR=12_GitHubo_agentic-academic-site"
+set "TARGET_DIR=12_GitHub_agentic-academic-site"
 set "REPO_URL=git@github.com:edchen1240/agentic-academic-site.git"
 set "BRANCH=main"
 set "COMMIT_MSG=Auto commit from batch script."
