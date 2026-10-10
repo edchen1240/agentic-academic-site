@@ -1,6 +1,7 @@
 # Local development scripts
-# [G]_*.bat # Let the user use them. It's okay to leak my local directory structure.
-# [V]_*.bat
+# The [G] launcher became a thin wrapper over Ed's local P06_git_sync engine (2026-10), so it cannot run for anyone else; keep it local. Brackets escaped so the rule is literal, root-anchored to cover only top-level launchers.
+/\[G\]_*.bat
+# [V]_*.bat stays tracked: it uses %~dp0 and carries no local path.
 
 # project-sync session logs (optional, in-repo)
 09_docs/project-sync-log/
